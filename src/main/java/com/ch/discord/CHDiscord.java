@@ -68,7 +68,7 @@ public class CHDiscord extends JavaPlugin {
     private void connect(int gen, String token, String channelId) {
         try {
             JDA built = JDABuilder.createLight(token,
-                            GatewayIntent.GUILDS, GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT)
+                            GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT)
                     .setMemberCachePolicy(MemberCachePolicy.NONE)
                     .addEventListeners(new ConsoleListener(this, channelId))
                     .build();
