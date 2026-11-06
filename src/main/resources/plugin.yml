@@ -1,0 +1,16 @@
+name: CH-Discord
+main: com.ch.discord.CHDiscord
+version: 1.0
+api-version: '1.21'
+description: 디스코드 채널에 서버 콘솔을 전송하고, 그 채널에서 콘솔 명령어를 실행
+libraries:
+  - net.dv8tion:JDA:5.2.1
+commands:
+  chdiscord:
+    description: CH-Discord 관리
+    aliases: [chd]
+    usage: /chdiscord reload
+permissions:
+  chdiscord.admin:
+    description: CH-Discord 관리 (리로드)
+    default: op

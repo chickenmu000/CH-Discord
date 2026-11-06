@@ -1,0 +1,38 @@
+# 디스코드 봇 토큰 (Discord Developer Portal -> Bot)
+# 봇 설정에서 "MESSAGE CONTENT INTENT" 를 켜야 채널의 명령어를 읽을 수 있습니다.
+bot-token: ''
+
+# 콘솔 채널 ID (디스코드 채널 우클릭 -> ID 복사). 봇이 이 채널의 메시지 읽기/보내기 권한이 있어야 합니다.
+console-channel-id: ''
+
+console:
+  # 보낼 로그 레벨 (INFO, WARN, ERROR, FATAL, DEBUG, TRACE). 비우면 아무것도 보내지 않음
+  levels: [INFO, WARN, ERROR, FATAL]
+
+  # true = 코드 블록(```)으로 감싸서 보냄
+  use-code-blocks: true
+
+  # 한 줄 앞에 붙는 형식. {date} 시각, {level} 레벨, {name} 로거 이름
+  prefix: '[{date} {level}] '
+
+  # 로그를 모아서 보내는 간격(초)
+  send-interval-seconds: 2
+
+  # 예외 스택트레이스를 최대 몇 줄까지 보낼지 (0 = 예외 내용 안 보냄)
+  max-stacktrace-lines: 20
+
+  # 이 정규식에 맞는 로그 줄은 보내지 않음 (예: '^\[.*\] Villager .*')
+  ignore-patterns: []
+
+command:
+  # 봇이 보낸 메시지는 명령어로 실행하지 않음
+  block-bots: true
+
+  # blacklist = 아래 명령어는 실행 불가 / whitelist = 아래 명령어만 실행 가능
+  filter-mode: blacklist
+  filter-commands: []
+
+  # 디스코드에서 실행한 명령어 기록 파일 (plugins/CH-Discord/ 안). 비우면 기록 안 함
+  usage-log: 'console-usage.log'
+  # true = 기록에 실패하면 명령어를 실행하지 않음
+  cancel-if-log-fails: true
