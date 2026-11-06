@@ -5,7 +5,6 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
-import net.dv8tion.jda.api.utils.cache.CacheFlag;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -70,7 +69,6 @@ public class CHDiscord extends JavaPlugin {
         try {
             JDA built = JDABuilder.createLight(token,
                             GatewayIntent.GUILDS, GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT)
-                    .disableCache(CacheFlag.values())
                     .setMemberCachePolicy(MemberCachePolicy.NONE)
                     .addEventListeners(new ConsoleListener(this, channelId))
                     .build();
